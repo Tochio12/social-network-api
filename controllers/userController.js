@@ -3,7 +3,7 @@ const { User, Thought } = require('../models');
 
 module.exports = {
     // get all users
-    getUser(req, res) {
+    getUsers(req, res) {
         User.find()
             .select('-__v')
             .then(async (users) => res.json(users))
