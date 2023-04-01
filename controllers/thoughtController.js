@@ -28,7 +28,9 @@ module.exports = {
                     { $push: { thoughts: data._id } },
                     { new: true }
                 )
-            });
+            })
+            .then((thoughtData => res.status(200).json(thoughtData)))
+            .catch((err) => res.status(500).json(err));
     },
 
     // update thought by id
